@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+	
+  </head>
+
+	
+    <audio id="music" src="./mp3/acknowledgement.mp3"></audio>
+    <input type="button"  onclick="play();" value="顺序播放" >  </input>
+    <input type="button"  onclick="stop();" value="停止" >  </input>
+
+	<script>
+
+let m = document.getElementById('music');
+
+let mp3List=[
+  "./mp3/acknowledgement.mp3",
+"./mp3/adviser.mp3",
+"./mp3/aeroplane.mp3",
+"./mp3/aluminium.mp3",
+"./mp3/analogue.mp3",
+"./mp3/analyse.mp3",
+"./mp3/annex.mp3",
+"./mp3/apologize.mp3",
+"./mp3/archaeology.mp3",
+"./mp3/artefact.mp3",
+"./mp3/axe.mp3",
+"./mp3/behaviour.mp3",
+"./mp3/career counselor.mp3",
+"./mp3/catalogue.mp3",
+"./mp3/center.mp3",
+"./mp3/cheque.mp3",
+"./mp3/chili.mp3",
+"./mp3/colour.mp3",
+"./mp3/cosy.mp3",
+"./mp3/criticize.mp3",
+"./mp3/curb.mp3",
+"./mp3/defence.mp3",
+"./mp3/dialogue.mp3",
+"./mp3/disk.mp3",
+"./mp3/doughnut.mp3",
+"./mp3/draught.mp3",
+"./mp3/emphasis.mp3",
+"./mp3/enquiry.mp3",
+"./mp3/enrol.mp3",
+"./mp3/favour.mp3",
+"./mp3/fiber.mp3",
+"./mp3/fulfil.mp3",
+"./mp3/gaol.mp3",
+"./mp3/glamor.mp3",
+"./mp3/grey.mp3",
+"./mp3/harbour.mp3",
+"./mp3/honor.mp3",
+"./mp3/jail.mp3",
+"./mp3/jewellery.mp3",
+"./mp3/judgment.mp3",
+"./mp3/kilometre.mp3",
+"./mp3/labor.mp3",
+"./mp3/licence.mp3",
+"./mp3/liter.mp3",
+"./mp3/metre.mp3",
+"./mp3/mold.mp3",
+"./mp3/naught.mp3",
+"./mp3/neighbour.mp3",
+"./mp3/offence.mp3",
+"./mp3/organization.mp3",
+"./mp3/parlor.mp3",
+"./mp3/plow.mp3",
+"./mp3/practice.mp3",
+"./mp3/practise.mp3",
+"./mp3/pyjamas.mp3",
+"./mp3/realize.mp3",
+"./mp3/rigor.mp3",
+"./mp3/saviour.mp3",
+"./mp3/savour.mp3"
+];
+
+let mp3Count = mp3List.length;
+let curCount = 0;
+
+      function play()
+      {
+        
+        m.load();
+        m.play();
+        setTimeout(next, 3*1000);
+      }
+
+      function next(){
+        m.pause();
+        if( curCount >= mp3Count)
+        {
+          curCount = 0;
+        }
+        else
+        {
+          curCount ++;
+        }
+        m.setAttribute("src", mp3List[curCount]);
+        m.load();
+        m.play();
+        setTimeout(next, 5*1000);
+      }
+
+	</script>
+  </body>
+</html>
